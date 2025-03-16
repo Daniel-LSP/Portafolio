@@ -44,19 +44,23 @@
                 <a href="#">CHAT</a>
             </li>
             <li>
-                <a href="#">TRADUCTOR</a>
+                <a href="#">IDIOMAS</a>
             </li>
         </ul>
-        <ul class="nav-menu-right">
-            <li>
-            <div class="container">
-                <input type="text" placeholder="Buscar...">
-                <button>
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                </button>
+        <div id="right-navigation">
+            <div id="p-search" role="search">
+                <h3>
+                    <label for="searchInput">Buscar</label>
+                </h3>
+                <form action="" id="searchform">
+                    <div id="simplSearch">
+                        <input type="search" name="search" placeholder="Buscar" title="Buscar en esta pagina [alt-shift-f]" accesskey="f" id="searchInput" tabindex="1" autocomplete="off" dir="rtl">
+                        <input type="hidden" value="Especial:Buscar" name="title">
+                        <input type="submit" name="go" value="Ir" title="Ir a la pagina con este nombre exacto si existe" id="searchButton" class="searchButton">
+                    </div>
+                </form>
             </div>
-            </li>
-        </ul>
+        </div>
     </nav>
     <hr> <!-- para que tenga una linea abajo de la navegacion-->
 </div>
