@@ -3,53 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Página Personal</title>
-    <link rel="stylesheet" href="styles.css">
+    <title data-key="title">Mi Página Personal</title>
+    <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
+    <!-- Selector de idioma (parte superior derecha) -->
+    <div class="language-selector-container">
+        <select id="languageSelector" class="language-selector">
+            <option value="es">Español</option>
+            <option value="en">English</option>
+            <option value="fr">Français</option>
+        </select>
+    </div>
+
+    <!-- Título centrado -->
     <header>
-        <h1>Hola, soy Daniel</h1>
-        <nav>
-            <ul>
-                <li><a href="#about">Sobre mí</a></li>
-                <li><a href="#services"></a></li>
-                <li><a href="#contact">Contacto</a></li>
-            </ul>
-        </nav>
+        <h1 id="titulo" data-key="header-title">Mi Página Personal</h1>
     </header>
 
-    <section id="about">
-        <h2>Sobre mí</h2>
-        <p></p>
-    </section>
+    <!-- Secciones como botones -->
+    <nav>
+        <a href="#acerca" data-key="about-section">Acerca de mí</a>
+        <a href="#proyectos" data-key="projects-section">Proyectos</a>
+        <a href="#portafolio" data-key="portfolio-section">Portafolio</a>
+        <a href="#contacto" data-key="contact-section">Contacto</a>
+        <a href="#juegos" data-key="games-section">Zona de Juegos</a>
+    </nav>
 
-    <section id="services">
-        <h2></h2>
-        <div class="service">
-            <h3></h3>
-            <p></p>
+    <!-- Barra de búsqueda -->
+    <div class="search-container">
+        <input type="text" id="searchBar" placeholder="Buscar en la página..." data-key="search-placeholder">
+    </div>
+
+    <!-- Contenedor principal para anuncios y contenido central -->
+    <div class="main-layout">
+        <!-- Espacio para anuncios en el lado izquierdo -->
+        <div class="sidebar" id="left-ad">
+            <!-- Aquí puedes añadir anuncios o imágenes publicitarias -->
         </div>
-        <div class="service">
-            <h3></h3>
-            <p></p>
+        <!-- Área principal para contenido personalizado -->
+        <div class="content" id="main-content">
+            <!-- Aquí puedes colocar videos, fotos u otros elementos -->
         </div>
-    </section>
+        <!-- Espacio para anuncios en el lado derecho -->
+        <div class="sidebar" id="right-ad">
+            <!-- Aquí puedes añadir anuncios o imágenes publicitarias -->
+        </div>
+    </div>
 
-    <section id="contact">
-        <h2>Contacto</h2>
-        <form id="contactForm">
-            <input type="text" id="name" placeholder="Tu nombre" required>
-            <input type="email" id="email" placeholder="Tu email" required>
-            <textarea id="message" placeholder="Tu mensaje" required></textarea>
-            <button type="submit">Enviar</button>
-        </form>
-        <div id="responseMessage" class="hidden"></div>
-    </section>
-
-    <footer>
-        <p>&copy; 2023 DANIEL. Todos los derechos reservados.</p>
-    </footer>
-
-    <script src="script.js"></script>
+    <!-- Script de funcionalidad -->
+    <script src="scripts/script.js"></script>
 </body>
 </html>
+
+
+
