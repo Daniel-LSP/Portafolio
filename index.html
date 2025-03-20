@@ -15,7 +15,24 @@
             <option value="fr">Français</option>
         </select>
     </div>
-
+    <div id="social-menu" class="hamburger-menu">
+        <div class="hamburger-icon" id="hamburger-icon">
+            <!-- Icono de tres rayas -->
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="social-list" id="social-list">
+            <li>Facebook</li>
+            <li>Instagram</li>
+            <li>Twitter</li>
+            <li>LinkedIn</li>
+            <li>YouTube</li>
+            <li>Pinterest</li>
+            <li>TikTok</li>
+        </ul>
+    </div>
+    
     <!-- Contenido de la página -->
     <header>
         <h1>Mi Página Personal</h1>
@@ -29,32 +46,45 @@
         <a href="#juegos">Zona de Juegos</a>
     </nav>
     <section id="acerca" class="about-section">
-        <h2>Acerca de mí</h2>
-        <div class="about-container">
-            <p class="about-item">Hola, soy Lewin Daniel</p>
-            <p class="about-item">Técnico en chef cocinero</p>
-            <p class="about-item">Actualmente estoy estudiando como Developer Junior</p>
-            <p class="about-item">El propósito de esta página es para que los profesores puedan dar sus clases sin tener que pagar</p>
-            <p class="about-item">Teniendo funciones de diseño avanzadas de acuerdo a la clase que va a dar</p>
+        <div class="sidebar left-sidebar">Anuncios del lado izquierdo</div>
+        
+        <div class="about-content">
+            <h2>Acerca de mí</h2>
+            <div class="about-container">
+                <div class="about-box">
+                    <p class="about-item">Hola, soy Lewin Daniel</p>
+                </div>
+                <div class="about-box">
+                    <p class="about-item">Técnico en chef cocinero</p>
+                </div>
+                <div class="about-box">
+                    <p class="about-item">Actualmente estoy estudiando como Developer Junior</p>
+                </div>
+                <div class="about-box">
+                    <p class="about-item">El propósito de esta página es para que los profesores puedan dar sus clases sin tener que pagar</p>
+                </div>
+                <div class="about-box">
+                    <p class="about-item">Teniendo funciones de diseño avanzadas de acuerdo a la clase que va a dar</p>
+                </div>
+            </div>
         </div>
+    
+        <div class="sidebar right-sidebar">Anuncios del lado derecho</div>
     </section>
+    
     
     <div class="search-container">
         <input type="text" id="searchBar" placeholder="Buscar en la página..." data-key="search-placeholder">
     </div>
 
     <div class="main-layout">
-        <div class="sidebar">Anuncios del lado izquierdo</div>
-        <div class="content">
             <div class="content">
                 <div id="educational-groups" class="educational-groups">
                     <h2>Grupos Educativos</h2>
-            
                     <!-- Mostrar lista de grupos creados -->
                     <div id="group-list">
                         <p>Aún no hay grupos creados. ¡Sé el primero en crear uno!</p>
                     </div>
-            
                     <!-- Formulario para crear nuevos grupos -->
                     <form id="group-form">
                         <input type="text" id="group-name" placeholder="Nombre del grupo" required />
@@ -69,14 +99,11 @@
                         </select>
                         <button type="submit">Crear Grupo</button>
                     </form>
-            
                     <!-- Botón para eliminar todos los grupos -->
                     <button id="clear-all-groups">Eliminar Todos los Grupos</button>
                 </div>
             </div>
-            
         </div>
-        <div class="sidebar">Anuncios del lado derecho</div>
     </div>
     <script src="scripts/script.js"></script>
 </body>

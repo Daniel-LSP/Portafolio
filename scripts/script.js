@@ -16,7 +16,6 @@ function animateTitle() {
 document.addEventListener('DOMContentLoaded', () => {
     const hamburgerIcon = document.getElementById('hamburger-icon');
     const socialMenu = document.getElementById('social-menu');
-
     // Agregar evento para abrir/cerrar el menú al hacer clic
     hamburgerIcon.addEventListener('click', () => {
         socialMenu.classList.toggle('open'); // Alternar la clase "open"
@@ -29,6 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initializeLanguageSelector(); // Configurar el selector de idioma
     initializeSearchBar(); // Configurar la barra de búsqueda
     animateTitle(); // Iniciar la animación del título
+    loadGroups();
 });
 
 // Función para traducir automáticamente todos los textos visibles
@@ -133,7 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <h4>${group.name}</h4>
             <p>${group.description}</p>
             <button class="delete-button">Eliminar</button>
-        `;
+            `;
 
         // Añadir evento al botón de eliminar
         groupElement.querySelector('.delete-button').addEventListener('click', () => {
@@ -178,29 +178,23 @@ document.addEventListener('DOMContentLoaded', () => {
     const contentArea = document.querySelector('.content'); // Donde va la información
     const searchBar = document.querySelector('.search-container'); // Buscador
     const hamburgerMenu = document.querySelector('.hamburger-menu'); // Menú hamburguesa
-
-    // Lógica para mostrar solo la sección seleccionada y ocultar el resto
-    navLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault(); // Evita el comportamiento por defecto del enlace
-
-            // Ocultar todo excepto los anuncios y la sección seleccionada
-            const targetId = link.getAttribute('href').slice(1); // Obtener el id del destino
-            const targetSection = document.getElementById(targetId);
-
-            // Ocultar elementos no deseados
-            searchBar.style.display = 'none';
-            hamburgerMenu.style.display = 'none';
-            contentArea.style.margin = '0'; // Ajustar espacio para centrar el contenido
-
-            // Ocultar todas las secciones excepto la seleccionada
-            sections.forEach(section => {
-                section.style.display = 'none'; // Ocultar sección
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault(); // Evita el comportamiento por defecto del enlace
+    
+                const targetId = link.getAttribute('href').slice(1); // Obtener id del destino
+                const targetSection = document.getElementById(targetId);
+    
+                // Ocultar todas las secciones
+                sections.forEach(section => {
+                    section.style.display = 'none'; // Ocultar sección
+                });
+    
+                // Mostrar solo la sección seleccionada
+                if (targetSection) {
+                    targetSection.style.display = 'grid'; // Usar "grid" para el diseño con anuncios
+                }
             });
-
-            if (targetSection) {
-                targetSection.style.display = 'flex'; // Mostrar solo la sección seleccionada
-            }
         });
     });
-});
+

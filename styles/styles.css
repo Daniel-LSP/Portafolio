@@ -12,15 +12,12 @@ header {
     text-align: center;
     margin: 20px 0;
 }
-#titulo {
-    font-size: 3rem;
-    color: white;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
 
 /* Animaciones del título */
 #titulo {
+    font-size: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
     color: white; /* Hace el título visible desde el inicio */
     display: inline-block;
 }
@@ -98,8 +95,8 @@ nav a:hover {
 .about-item {
     font-size: 1.5rem;
     opacity: 0; /* Ocultar inicialmente */
-    transform: translateY(20px); /* Posición inicial hacia abajo */
-    animation: slideIn 1s ease forwards;
+    transform: translateY(10px); /* Posición inicial hacia abajo */
+    animation: slideIn 0.8s ease forwards;
 }
 
 .about-item:nth-child(1) {
@@ -319,19 +316,53 @@ form button:hover {
     border-bottom: 1px solid #444;
     padding-bottom: 5px;
 }
-
-/* Ocultar elementos que no se necesiten */
-section {
-    display: none; /* Todas las secciones están ocultas por defecto */
-}
-
-section.active {
-    display: flex; /* La sección activa será visible */
-    justify-content: center;
+@media (max-width: 768px) {
+.about-section {
+    display: flex;
+    grid-template-columns: 1fr 3fr 1fr; /* Espacios para anuncios y contenido central */
     align-items: center;
-    flex-direction: column;
-    min-height: 100vh; /* Ocupa la pantalla completa */
-    text-align: center;
+    min-height: 100vh; /* Ocupa toda la pantalla */
     background-color: #111;
     color: white;
+    font-family: Arial, sans-serif;
 }
+.sidebar {display: none;
+}
+}
+
+.sidebar {
+    background-color: #222;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.about-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+
+.about-box {
+    opacity: 0; /* Ocultar inicialmente */
+    transform: translateY(20px); /* Mover hacia abajo inicialmente */
+    animation: slideIn 1s ease forwards;
+}
+
+.about-box:nth-child(1) { animation-delay: 0.5s; }
+.about-box:nth-child(2) { animation-delay: 1s; }
+.about-box:nth-child(3) { animation-delay: 1.5s; }
+.about-box:nth-child(4) { animation-delay: 2s; }
+.about-box:nth-child(5) { animation-delay: 2.5s; }
+
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
