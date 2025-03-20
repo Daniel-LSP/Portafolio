@@ -1,8 +1,12 @@
 {
-    "title": "My Personal Page",
-    "header-title": "My Personal Page",
-    "search-placeholder": "Search the page...",
-    "about-section": "About Me",
-    "about-title": "About Me",
-    "about-content": "This is the section where I can introduce myself. Here I will add interesting text about me."
+    "Mi Página Personal": "My Personal Page",
+    "Acerca de mí": "About Me",
+    "Proyectos": "Projects",
+    "Portafolio": "Portfolio",
+    "Contacto": "Contact",
+    "Zona de Juegos": "Game Zone",
+    "Anuncios del lado izquierdo": "Left Side Ads",
+    "Aquí puedes colocar videos, fotos o lo que quieras": "Here you can place videos, photos, or anything you want",
+    "Anuncios del lado derecho": "Right Side Ads"
 }
+
