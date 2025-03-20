@@ -21,19 +21,61 @@
         <h1>Mi Página Personal</h1>
     </header>
     <nav>
+        <a href="#educational-groups">Inicio</a>
         <a href="#acerca">Acerca de mí</a>
         <a href="#proyectos">Proyectos</a>
         <a href="#portafolio">Portafolio</a>
         <a href="#contacto">Contacto</a>
         <a href="#juegos">Zona de Juegos</a>
     </nav>
+    <section id="acerca" class="about-section">
+        <h2>Acerca de mí</h2>
+        <div class="about-container">
+            <p class="about-item">Hola, soy Lewin Daniel</p>
+            <p class="about-item">Técnico en chef cocinero</p>
+            <p class="about-item">Actualmente estoy estudiando como Developer Junior</p>
+            <p class="about-item">El propósito de esta página es para que los profesores puedan dar sus clases sin tener que pagar</p>
+            <p class="about-item">Teniendo funciones de diseño avanzadas de acuerdo a la clase que va a dar</p>
+        </div>
+    </section>
+    
     <div class="search-container">
         <input type="text" id="searchBar" placeholder="Buscar en la página..." data-key="search-placeholder">
     </div>
 
     <div class="main-layout">
         <div class="sidebar">Anuncios del lado izquierdo</div>
-        <div class="content">Aquí puedes colocar videos, fotos o lo que quieras</div>
+        <div class="content">
+            <div class="content">
+                <div id="educational-groups" class="educational-groups">
+                    <h2>Grupos Educativos</h2>
+            
+                    <!-- Mostrar lista de grupos creados -->
+                    <div id="group-list">
+                        <p>Aún no hay grupos creados. ¡Sé el primero en crear uno!</p>
+                    </div>
+            
+                    <!-- Formulario para crear nuevos grupos -->
+                    <form id="group-form">
+                        <input type="text" id="group-name" placeholder="Nombre del grupo" required />
+                        <textarea id="group-description" placeholder="Descripción del grupo" required></textarea>
+                        <select id="group-category">
+                            <option value="">Selecciona una categoría</option>
+                            <option value="Matemáticas">Matemáticas</option>
+                            <option value="Idiomas">Idiomas</option>
+                            <option value="Ciencias">Ciencias</option>
+                            <option value="Tecnología">Tecnología</option>
+                            <option value="Arte">Arte</option>
+                        </select>
+                        <button type="submit">Crear Grupo</button>
+                    </form>
+            
+                    <!-- Botón para eliminar todos los grupos -->
+                    <button id="clear-all-groups">Eliminar Todos los Grupos</button>
+                </div>
+            </div>
+            
+        </div>
         <div class="sidebar">Anuncios del lado derecho</div>
     </div>
     <script src="scripts/script.js"></script>

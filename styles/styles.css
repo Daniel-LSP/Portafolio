@@ -7,6 +7,40 @@ body {
     color: #fff; /* Texto blanco */
 }
 
+/* Encabezado y título */
+header {
+    text-align: center;
+    margin: 20px 0;
+}
+#titulo {
+    font-size: 3rem;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Animaciones del título */
+#titulo {
+    color: white; /* Hace el título visible desde el inicio */
+    display: inline-block;
+}
+.letter {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: appear 2s forwards;
+}
+@keyframes appear {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
 /* Selector de idioma */
 .language-selector-container {
     position: fixed;
@@ -22,17 +56,6 @@ body {
     cursor: pointer;
 }
 
-/* Encabezado y título */
-header {
-    text-align: center;
-    margin: 20px 0;
-}
-#titulo {
-    font-size: 3rem;
-    color: white;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
 
 /* Navegación con botones */
 nav {
@@ -53,6 +76,132 @@ nav a:hover {
     background-color: silver;
     color: black;
 }
+.about-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #111;
+    color: white;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+.about-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Espacio entre las frases */
+    animation: fadeIn 2s ease;
+}
+
+.about-item {
+    font-size: 1.5rem;
+    opacity: 0; /* Ocultar inicialmente */
+    transform: translateY(20px); /* Posición inicial hacia abajo */
+    animation: slideIn 1s ease forwards;
+}
+
+.about-item:nth-child(1) {
+    animation-delay: 0.5s;
+}
+
+.about-item:nth-child(2) {
+    animation-delay: 1s;
+}
+
+.about-item:nth-child(3) {
+    animation-delay: 1.5s;
+}
+
+.about-item:nth-child(4) {
+    animation-delay: 2s;
+}
+
+.about-item:nth-child(5) {
+    animation-delay: 2.5s;
+}
+
+/* Animación para las frases */
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Fondo que aparece al cargar la sección */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* Estilo para el menú hamburguesa */
+.hamburger-menu {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 10;
+}
+
+.hamburger-icon {
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.hamburger-icon span {
+    display: block;
+    width: 30px;
+    height: 4px;
+    background-color: white;
+    transition: 0.3s;
+}
+
+/* Lista de redes sociales (oculta por defecto) */
+.social-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    background-color: #111;
+    border: 1px solid #444;
+    border-radius: 5px;
+    display: none; /* Oculto inicialmente */
+    width: 150px;
+}
+
+.social-list li {
+    color: white;
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #444;
+    cursor: default;
+}
+
+.social-list li:last-child {
+    border-bottom: none;
+}
+
+.social-list li:hover {
+    background-color: #333;
+}
+
+/* Animación de apertura/cierre del menú */
+.hamburger-menu.open .social-list {
+    display: block; /* Mostrar lista al abrir menú */
+}
+
 
 /* Barra de búsqueda */
 .search-container {
@@ -88,25 +237,101 @@ nav a:hover {
     color: white;
     border: 1px solid #444;
 }
+.educational-groups {
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #111;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    width: 80%;
+}
 
-/* Animaciones del título */
-#titulo {
-    color: white; /* Hace el título visible desde el inicio */
-    display: inline-block;
+#group-list {
+    margin: 20px 0;
+    padding: 10px;
+    background-color: #222;
+    border-radius: 5px;
+    min-height: 100px; /* Espacio para lista de grupos */
 }
-.letter {
-    display: inline-block;
-    opacity: 0;
-    transform: translateY(50px);
-    animation: appear 2s forwards;
+
+form {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
-@keyframes appear {
-    0% {
-        opacity: 0;
-        transform: translateY(50px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0px);
-    }
+
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid silver;
+    border-radius: 5px;
+    background-color: #333;
+    color: white;
+}
+
+form button {
+    padding: 10px;
+    background-color: silver;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #ddd;
+}
+
+.group-item {
+    background-color: #222;
+    color: white;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+    position: relative;
+}
+
+.group-item button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.group-item button:hover {
+    background-color: darkred;
+}
+
+.category {
+    font-size: 1.2rem;
+    margin: 15px 0 5px;
+    text-align: left;
+    text-transform: capitalize;
+    color: silver;
+    border-bottom: 1px solid #444;
+    padding-bottom: 5px;
+}
+
+/* Ocultar elementos que no se necesiten */
+section {
+    display: none; /* Todas las secciones están ocultas por defecto */
+}
+
+section.active {
+    display: flex; /* La sección activa será visible */
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh; /* Ocupa la pantalla completa */
+    text-align: center;
+    background-color: #111;
+    color: white;
 }
