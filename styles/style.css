@@ -5,6 +5,58 @@
       overflow: hidden;
       font-family: Arial, sans-serif;
     }
+
+   /* Estilo del menú */
+   .hamburger-menu {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    width: 50px;
+    height: 50px;
+    background-color: #000;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #00d4ff, 0 0 20px #00d4ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.menu-content {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    background-color: #000;
+    border-radius: 10px;
+    width: 200px;
+    padding: 20px;
+    box-shadow: 0 0 10px #00d4ff, 0 0 20px #00d4ff;
+    display: none; /* Oculto por defecto */
+    flex-direction: column;
+    gap: 15px;
+}
+
+.menu-content a {
+    text-decoration: none;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.menu-content a:hover {
+    color: #00d4ff; /* Efecto al pasar el cursor */
+}
+
+/* Estilo de los íconos */
+.menu-icon {
+    width: 24px;
+    height: 24px;
+}
+
 .particle {
     position: absolute;
     width: 10px;

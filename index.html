@@ -1,45 +1,66 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LewinDaniel</title>
-  <link rel="stylesheet" href="styles/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LewinDaniel</title>
+<link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-  <div class="controls">
+    <!-- Botón del menú hamburguesa -->
+    <div class="hamburger-menu" id="menu-trigger">
+        ☰ <!-- Símbolo del menú -->
+    </div>
+
+    <!-- Contenido del menú -->
+    <div class="menu-content" id="menu">
+        <a href="https://www.tiktok.com" target="_blank">
+            <img src="ruta/tiktok-icon.png" alt="TikTok" class="menu-icon"> TikTok
+        </a>
+        <a href="https://www.facebook.com" target="_blank">
+            <img src="ruta/facebook-icon.png" alt="Facebook" class="menu-icon"> Facebook
+        </a>
+        <a href="https://www.whatsapp.com" target="_blank">
+            <img src="ruta/whatsapp-icon.png" alt="WhatsApp" class="menu-icon"> WhatsApp
+        </a>
+        <a href="https://www.instagram.com" target="_blank">
+            <img src="ruta/instagram-icon.png" alt="Instagram" class="menu-icon"> Instagram
+        </a>
+        <a href="https://www.youtube.com" target="_blank">
+            <img src="ruta/youtube-icon.png" alt="YouTube" class="menu-icon"> YouTube
+        </a>
+    </div>
+<div class="controls">
     <button onclick="scrollPrev()">⟨</button>
     <button onclick="scrollNext()">⟩</button>
-  </div>
+</div>
 
-  <div class="container" id="scrollContainer">
+<div class="container" id="scrollContainer">
     <!-- Primera sección -->
     <div class="section">
-      <div class="section-content">
+    <div class="section-content">
         <h1>Hola, soy Lewin Daniel</h1>
-      </div>
-      <img src="img/LOBO.png" alt="LOBO.png">
     </div>
-
+    <img src="img/LOBO.png" alt="LOBO.png">
+    </div>
     <!-- Segunda sección -->
     <div class="section">
-      <img src="" alt="Imagen de ejemplo 1">
-      <div class="section-content">
-        <h2>Sección 1</h2>
+    <img src="" alt="Imagen de ejemplo 1">
+    <div class="section-content">
+    <h2>Sección 1</h2>
         <p>Contenido de la primera sección con su propia imagen y color.</p>
-      </div>
     </div>
-
+    </div>
     <!-- Tercera sección -->
     <div class="section">
-      <div class="section-content">
+    <div class="section-content">
         <h2>Sección 2</h2>
         <p>Contenido de la segunda sección con su propia imagen y color.</p>
-      </div>
-      <img src="img_placeholder2.jpg" alt="Imagen de ejemplo 2">
     </div>
-  </div>
-  <script src="scripts/script.js"></script>
+    <img src="img_placeholder2.jpg" alt="Imagen de ejemplo 2">
+    </div>
+    </div>
+    <script src="scripts/script.js"></script>
 </body>
 </html>
 
