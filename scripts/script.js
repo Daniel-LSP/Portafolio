@@ -29,16 +29,16 @@ const container = document.getElementById('scrollContainer');
   const menuTrigger = document.getElementById('menu-trigger');
   const menu = document.getElementById('menu');
 
-  // Mostrar el menú cuando el cursor está sobre el botón
-  menuTrigger.addEventListener('mouseover', () => {
-      menu.style.display = 'flex';
-  });
+menuTrigger.addEventListener('mouseenter', () => {
+    menu.style.display = 'flex';
+});
+
 
   // Cerrar el menú cuando el cursor se aparta
   menu.addEventListener('mouseleave', () => {
       menu.style.display = 'none';
   });
-  
+
   document.addEventListener("mousemove", (event) => {
       const particle = document.createElement("div");
       particle.classList.add("particle");
