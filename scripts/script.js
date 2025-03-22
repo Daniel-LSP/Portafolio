@@ -1,8 +1,8 @@
 const container = document.getElementById('scrollContainer');
-const sections = document.querySelectorAll('.section'); // Todas las secciones
+const sections = document.querySelectorAll('.section');
 let currentSection = 0; // Índice de la sección actual
 
-// Función para desplazarse a una sección con animación
+// Función para desplazarse a una sección
 function scrollToSection(index) {
   const sectionWidth = window.innerWidth;
   container.scrollTo({ left: index * sectionWidth, behavior: 'smooth' });
@@ -18,16 +18,18 @@ function scrollToSection(index) {
 
 // Lógica para desplazamiento automático con tiempos personalizados
 function autoScroll() {
-  const times = [3000, 5000, 4000, 6000]; // Tiempo específico por sección (en milisegundos)
+  const timePerSection = 30000; // Tiempo de 30 segundos por sección
   if (currentSection < sections.length) {
-    scrollToSection(currentSection); // Desplázate a la sección actual
+    scrollToSection(currentSection);
     setTimeout(() => {
       currentSection++;
-      autoScroll(); // Llama de nuevo para la siguiente sección
-    }, times[currentSection] || 5000); // Tiempo predeterminado si no se especifica
+      autoScroll();
+    }, timePerSection);
   } else {
-    currentSection = 0; // Reiniciar al inicio cuando termine
-    autoScroll();
+    // Reiniciar al inicio
+    currentSection = 0;
+    scrollToSection(currentSection);
+    setTimeout(autoScroll, timePerSection);
   }
 }
 
@@ -52,43 +54,10 @@ function scrollPrev() {
 // Añadir evento de teclado
 document.addEventListener('keydown', (event) => {
   if (event.key === 'ArrowRight') {
-    scrollNext(); // Desplazar hacia la derecha con la flecha derecha
+    scrollNext();
   } else if (event.key === 'ArrowLeft') {
-    scrollPrev(); // Desplazar hacia la izquierda con la flecha izquierda
+    scrollPrev();
   }
-});
-
-// Partículas que siguen el cursor
-const particles = [];
-const maxParticles = 50;
-
-document.addEventListener('mousemove', (event) => {
-  const particle = document.createElement('div');
-  particle.classList.add('particle');
-  particle.style.left = `${event.pageX}px`;
-  particle.style.top = `${event.pageY}px`;
-
-  // Añadir partícula al DOM
-  document.body.appendChild(particle);
-  particles.push(particle);
-
-  // Limitar el número de partículas activas
-  if (particles.length > maxParticles) {
-    const oldParticle = particles.shift();
-    if (document.body.contains(oldParticle)) {
-      document.body.removeChild(oldParticle);
-    }
-  }
-
-  // Desaparecer partículas con transición
-  setTimeout(() => {
-    particle.style.opacity = '0';
-    particle.addEventListener('transitionend', () => {
-      if (document.body.contains(particle)) {
-        document.body.removeChild(particle);
-      }
-    });
-  }, 500);
 });
 
 // Menú desplegable
