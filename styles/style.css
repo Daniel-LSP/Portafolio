@@ -77,21 +77,25 @@
       flex-direction: row;
       width: 100vw;
       height: 100vh;
-      overflow-x: auto;
+      overflow-x: hidden;
+      position: relative;
       scroll-behavior: smooth;
+      scroll-snap-type: x mandatory; /* Habilita navegación suave entre secciones */    
     }
-    .section {
+    .section.active {
       min-width: 100vw;
       height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
       position: relative;
+      opacity: 1;
+      transform: scale(1);
     }
     .section img {
       max-width: 40%;
-      max-height: 70%;
-      margin-right: 20px;
+      max-height: 60%;
+      margin-right: 5px;
       border-radius: 10px;
     }
     .section-content {
@@ -112,6 +116,10 @@
     .section:nth-child(3) {
       background: #e74c3c;
       color: white;
+    }
+    .section:nth-child(4) {
+      background: #f39c12; /* Ajusta el color del fondo */
+      color: white; /* Asegúrate de que el texto sea visible */
     }
     .controls {
       position: fixed;
