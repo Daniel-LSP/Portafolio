@@ -1,5 +1,7 @@
+from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    path('', include('portfolio_app.urls')),  # Incluye las rutas de la aplicación
+    path('admin/', admin.site.urls),
+    path('', include('portfolio_app.urls')),  # Conectar las rutas de portfolio_app
 ]
