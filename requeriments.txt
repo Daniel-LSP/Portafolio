@@ -1,0 +1,4 @@
+Flask==2.2.2
+flask-socketio==5.7.2
+gunicorn==21.2.0  # Para desplegar en servidores
+python-dotenv==1.0.1  # Para manejar variables de entorno (si es necesario)

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habilidades</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/skills.css') }}">
+</head>
+<body>
+    <section class="skills">
+        <h1 class="title">My Skills</h1>
+        <div class="skills-container">
+            <div class="skill">
+                <h3>HTML & CSS</h3>
+                <div class="progress">
+                    <div class="progress-bar html-css"></div>
+                </div>
+            </div>
+
+            <div class="skill">
+                <h3>JavaScript</h3>
+                <div class="progress">
+                    <div class="progress-bar js"></div>
+                </div>
+            </div>
+
+            <div class="skill">
+                <h3>Python</h3>
+                <div class="progress">
+                    <div class="progress-bar python"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="{{ url_for('static', filename='js/skills.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    color: white;
+    text-align: center;
+}
+
+/* Contact Section */
+.contact {
+    padding: 50px;
+}
+
+.title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    opacity: 0;
+    animation: fadeIn 1.5s forwards;
+}
+
+.description {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeIn 1.5s forwards;
+}
+
+/* Contact Form */
+.contact-form {
+    max-width: 500px;
+    margin: auto;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    animation: slideIn 1.5s forwards;
+}
+
+/* Input Fields */
+.input-group {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+.input-group input,
+.input-group textarea {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    font-size: 1rem;
+}
+
+.input-group textarea {
+    height: 100px;
+    resize: none;
+}
+
+/* Send Button */
+.send-button {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.2rem;
+    background: #ff007f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+.send-button:hover {
+    background: #e6006b;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
