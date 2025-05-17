@@ -1,22 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>Mi Portafolio</title>
     <link rel="stylesheet" href="static/css/styles.css">
 </head>
 <body>
     <header class="hero">
         <h1 class="title">Welcome to My Portfolio</h1>
         <p class="subtitle">Discover my work and skills</p>
-        <a href="#about" class="scroll-button">Learn More</a>
+        
+        <!-- Botones individuales para cada sección -->
+        <div class="button-container">
+            <a href="/about" class="nav-button">About Me</a>
+            <a href="/skills" class="nav-button">Skills</a>
+            <a href="/projects" class="nav-button">Projects</a>
+            <a href="/contact" class="nav-button">Contact</a>
+        </div>
     </header>
-
-    <section id="about">
-        <h2>About Me</h2>
-        <p>I am a passionate developer who loves animations and creative designs.</p>
-    </section>
 
     <script src="static/js/animations.js"></script>
 </body>
